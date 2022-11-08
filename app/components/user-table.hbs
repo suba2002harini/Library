@@ -1,0 +1,33 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile No</th>
+      <th scope="col">     </th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each @user as |u|}}
+        <tr>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.mobile}}</td>
+            <td>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-default btn-sm">
+                          <i class='far fa-edit'></i>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-default btn-sm">
+                           <i class='far fa-trash-alt'></i>
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

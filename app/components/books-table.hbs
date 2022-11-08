@@ -1,0 +1,35 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Total Pages</th>
+      <th scope="col">Count</th>
+      <th scope="col">     </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @book as |b|}}
+        <tr>
+            <td>{{b.name}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.count}}</td>
+            <td>{{b.page}}</td>
+             <td>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-default btn-sm">
+                          <i class='far fa-edit'></i>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-default btn-sm">
+                           <i class='far fa-trash-alt'></i>
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

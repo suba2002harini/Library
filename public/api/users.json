@@ -1,0 +1,32 @@
+{
+    "data": [
+      {
+        "type": "user",
+        "id": "1",
+        "attributes": {
+            "name":"Anu",
+            "email":"anu2002@gamil.com",
+            "mobile":"9443994851"
+        }
+      },
+      {
+        "type": "user",
+        "id": "2",
+        "attributes": {
+            "name":"Suba",
+            "email":"suba10@gamil.com",
+            "mobile":"6374173544"
+        }
+      },
+      {
+        "type": "user",
+        "id": "3",
+        "attributes": {
+            "name":"Harini",
+            "email":"harini.vm@gamil.com",
+            "mobile":"9488375851"
+        }
+      }
+    ]
+  }
+  

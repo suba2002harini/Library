@@ -1,0 +1,35 @@
+{
+    "data": [
+      {
+        "type": "book",
+        "id": "1",
+        "attributes": {
+            "name":"Harry Potter",
+            "author":"J.K.Rowling",
+            "count":"10",
+            "page":"920"
+        }
+      },
+      {
+        "type": "book",
+        "id": "2",
+        "attributes": {
+            "name":"Ponneyin selvan",
+            "author":"Kalki",
+            "count":"20",
+            "page":"500"
+        }
+      },
+      {
+        "type": "book",
+        "id": "3",
+        "attributes": {
+            "name":"The nine robers",
+            "author":"nisha",
+            "count":"2",
+            "page":"200"
+        }
+      }
+    ]
+  }
+  
