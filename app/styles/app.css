@@ -54,3 +54,10 @@ li:hover{
 .col-md-10{
   padding:30px ;
 }
+i{
+  font-size:24px;
+  color:gray;
+}
+#dec{
+   text-decoration: none;
+}
