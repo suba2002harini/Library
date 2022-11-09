@@ -1,0 +1,11 @@
+
+<form class="form-group">
+    <label>ID:<Input class="form-control" @value={{this.uid}} @type="text"  placeholder="enter the id" /></label><br>
+    <label>Name:<Input class="form-control" @value={{this.uname}} @type="text" placeholder="enter your name"  /></label><br>
+    <label>Email:<Input class="form-control" @value={{this.uemail}} @type="email" placeholder="enter your email"  /></label><br>
+    <label>Mobile No:<Input class="form-control"  @value={{this.unumber}} @type="text" placeholder="enter your number"  /></label>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" {{on "click" this.adduser}}>Save</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+    </div>
+</form>
