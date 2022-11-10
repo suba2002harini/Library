@@ -18,9 +18,10 @@
             <td>
                 <div class="row">
                     <div class="col">
-                        <button type="button" id={{u.uid}} class="btn btn-default btn-sm">
-                          <i class='far fa-edit'></i>
+                        <button type="button" id={{u.uid}} class="btn btn-default btn-sm" {{on "click" this.info}}>
+                          <i class='far fa-edit' id={{u.uid}} data-toggle="modal" data-target="#myModal1"></i>
                         </button>
+                        
                     </div>
                     <div class="col">
                         <button type="button" class="btn btn-default btn-sm">
@@ -33,3 +34,21 @@
     {{/each}}
   </tbody>
 </table>
+<div class="modal" id="myModal1">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <form class="form-group">
+          <label>ID:<Input class="form-control" @value={{this.ref}} @type="text"  placeholder="enter the id" /></label><br>
+          <label>Name:<Input class="form-control" @value={{this.uname}} @type="text" placeholder="enter your name"  /></label><br>
+          <label>Email:<Input class="form-control" @value={{this.uemail}} @type="email" placeholder="enter your email"  /></label><br>
+          <label>Mobile No:<Input class="form-control"  @value={{this.umobile}} @type="text" placeholder="enter your number"  /></label>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" {{on "click" this.update}}>Save</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
