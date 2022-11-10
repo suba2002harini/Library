@@ -5,7 +5,7 @@
     <label>Email:<Input class="form-control" @value={{this.uemail}} @type="email" placeholder="enter your email"  /></label><br>
     <label>Mobile No:<Input class="form-control"  @value={{this.unumber}} @type="text" placeholder="enter your number"  /></label>
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger" {{on "click" this.adduser}}>Save</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" {{on "click" this.adduser}} data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" {{on "click" this.close}}>Cancel</button>
     </div>
 </form>

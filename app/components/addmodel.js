@@ -20,10 +20,14 @@ export default class AddmodelComponent extends Component {
       this.unumber
     ) {
       this.args.onCreate(this.uid, this.uemail, this.uname, this.unumber);
+      this.args.toggle(false);
       this.uid = '';
       this.uemail = '';
       this.uname = '';
       this.unumber = '';
     }
+  }
+  @action close() {
+    this.args.toggle(false);
   }
 }

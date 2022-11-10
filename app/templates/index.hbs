@@ -1,16 +1,17 @@
 <div class="row">
     <div class="col-md-9"><h3>User List:</h3></div>
-    <div class="col-md-3"><button role="button" class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">Add User</button></div>
+    <div class="col-md-3"><button role="button" class="btn btn-primary" type="button" data-toggle="modal" {{on "click" (fn this.toggle true)}} data-target="#myModal">Add User</button></div>
 </div>
 <br><br>
+{{#if this.check}}
 <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-         <Addmodel @onCreate={{this.addMessage}}/>
+         <Addmodel @onCreate={{this.addMessage}} @toggle={{this.toggle}}/>
       </div>
     </div>
   </div>
 </div>
-
-<UserTable @user={{@model}}/>
+{{/if}}
+<UserTable @user={{@model}} @onDelete={{this.deleting}}/>
