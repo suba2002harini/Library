@@ -5,17 +5,19 @@ export default class IndexController extends Controller {
   @service store;
   @action
   addMessage(id, email, name, num) {
-      this.store.push({
-      data: [{
-        id: id,          
-        type: 'user',
-        attributes: {
-          uid: id,
-          name: name,
-          email: email,
-          mobile: num,
+    this.store.push({
+      data: [
+        {
+          id: id,
+          type: 'user',
+          attributes: {
+            uid: id,
+            name: name,
+            email: email,
+            mobile: num,
+          },
         },
-      }]
+      ],
     });
     return this.store.findAll('user');
   }
