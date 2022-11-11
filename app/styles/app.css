@@ -64,3 +64,12 @@ i{
 #dec1{
   text-decoration: none;
 }
+form{
+  color: green;
+  font-weight: bold;
+  font-size:17px;
+  
+}
+.align{
+  text-align: center;
+}

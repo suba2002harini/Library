@@ -1,6 +1,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Mobile No</th>
@@ -10,19 +11,21 @@
   <tbody>
    {{#each @user as |u|}}
         <tr>
+            <td>{{u.uid}}</td>
             <td>{{u.name}}</td>
             <td>{{u.email}}</td>
             <td>{{u.mobile}}</td>
             <td>
                 <div class="row">
                     <div class="col">
-                        <button type="button" class="btn btn-default btn-sm">
-                          <i class='far fa-edit'></i>
+                        <button type="button"  class="btn btn-default btn-sm" {{on "click" this.info}}>
+                          <i class='far fa-edit' id={{u.uid}}></i>
                         </button>
+                        
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-default btn-sm">
-                           <i class='far fa-trash-alt'></i>
+                        <button type="button" class="btn btn-default btn-sm" {{on "click" (fn this.deleted u)}}> <i class='far fa-trash-alt'></i>
+                           {{!-- <i class='far fa-trash-alt'id={{u.uid}} {{on "click" (fn this.toggles true)}}data-toggle="modal" data-target="#myModal2"></i> --}}
                         </button>
                     </div>
                 </div>
@@ -31,3 +34,33 @@
     {{/each}}
   </tbody>
 </table>
+{{#if this.del}}
+<div class="modal" id="myModal1">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <form class="form-group">
+          <label>ID:<Input class="form-control" @value={{this.uid}} @type="text"  placeholder="enter the id" /></label><br>
+          <label>Name:<Input class="form-control" @value={{this.uname}} @type="text" placeholder="enter your name"  /></label><br>
+          <label>Email:<Input class="form-control" @value={{this.uemail}} @type="email" placeholder="enter your email"  /></label><br>
+          <label>Mobile No:<Input class="form-control"  @value={{this.umobile}} @type="text" placeholder="enter your number"  /></label>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" {{on "click" this.update}} data-dismiss="modal">Save</button>
+              <button type="button" class="btn btn-danger" {{on "click" (fn this.toggles false)}}data-dismiss="modal">Cancel</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+{{/if}}
+{{!-- {{#if this.del}}
+<div class="modal" id="myModal2">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <DeleteModel @id={{this.ref}} @toggles={{this.toggles}}/>
+  </div>
+</div>
+</div>
+{{/if}} --}}
+
