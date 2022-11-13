@@ -10,6 +10,7 @@
   </thead>
   <tbody>
    {{#each @user as |u|}}
+    {{#unless u.isDeleted}}
         <tr>
             <td>{{u.uid}}</td>
             <td>{{u.name}}</td>
@@ -18,9 +19,9 @@
             <td>
                 <div class="row">
                     <div class="col">
-                        <button type="button"  class="btn btn-default btn-sm" {{on "click" this.info}}>
-                          <i class='far fa-edit' id={{u.uid}}></i>
-                        </button>
+                        <button type="button" id={{u.uid}} class="btn btn-default btn-sm" {{on "click" this.info}}>
+                          {{!-- <i class='far fa-edit' id={{u.uid}} {{on "click" (fn this.toggles true)}} data-toggle="modal" data-target="#myModal1"></i> --}}
+                        </button>   
                         
                     </div>
                     <div class="col">
@@ -31,6 +32,7 @@
                 </div>
             </td>
         </tr>
+        {{/unless}}
     {{/each}}
   </tbody>
 </table>
@@ -63,4 +65,5 @@
 </div>
 </div>
 {{/if}} --}}
+
 

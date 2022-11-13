@@ -22,19 +22,6 @@ export default class IndexController extends Controller {
     });
     return this.store.findAll('user');
   }
-  @action deleting(id) {
-    this.store.findRecord('user', id).then(function (post) {
-      post.destroyRecord();
-      console.log(post.isDeleted);
-      post.save();
-    });
-    // let user =this.store.peekRecord('user', this.ref);
-    // user.deleteRecord();
-    // console.log(user.isDeleted);
-    // console.log(this.args.user);
-    // user.save();
-    // return this.store.findAll('user');
-  }
   @tracked check = false;
   @action toggle(bol) {
     this.check = bol;

@@ -4,6 +4,7 @@
         "type": "book",
         "id": "1",
         "attributes": {
+            "bid":"1",
             "name":"Harry Potter",
             "author":"J.K.Rowling",
             "count":"10",
@@ -14,6 +15,7 @@
         "type": "book",
         "id": "2",
         "attributes": {
+            "bid":"2",
             "name":"Ponneyin selvan",
             "author":"Kalki",
             "count":"20",
@@ -24,6 +26,7 @@
         "type": "book",
         "id": "3",
         "attributes": {
+            "bid":"3",
             "name":"The nine robers",
             "author":"nisha",
             "count":"2",

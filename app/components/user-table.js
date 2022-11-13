@@ -9,6 +9,7 @@ export default class UserTableComponent extends Component {
   @tracked umobile;
   @tracked uid;
   @tracked del = false;
+  @tracked isdelete = false;
   @service store;
   @action info(event) {
     this.ref = event.target.id;
@@ -44,8 +45,8 @@ export default class UserTableComponent extends Component {
     let conform = window.confirm('are you sure!');
     if (conform) {
       h.deleteRecord();
-      //h.save();
-      return this.store.findAll('user');
+      h.save();
+      this.isdelete = true;
     }
   }
 }

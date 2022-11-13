@@ -1,0 +1,9 @@
+<form class="form-group border border-success" id="form" {{did-insert this.onload}}>
+    <label>ID:<Input class="form-control" @value={{this.bid}} @type="text"  placeholder="Enter the id" /></label><br>
+    <label>Book Name:<Input class="form-control" @value={{this.bname}} @type="text" placeholder="Enter the Book name"  /></label><br>
+    <label>Author:<Input class="form-control" @value={{this.bauthor}} @type="email" placeholder="Enter the Author name"  /></label><br>
+    <label>Count:<Input class="form-control"  @value={{this.bcount}} @type="text" placeholder="Enter the count"  /></label><br>
+    <label>Page:<Input class="form-control"  @value={{this.bpages}} @type="text" placeholder="Enter the no.of.pages"  /></label><br><br>
+        <button type="button" class="btn btn-danger" {{on "click" this.edit}} data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" {{on "click" this.close}}>Cancel</button>
+</form>
