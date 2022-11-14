@@ -67,9 +67,22 @@ i{
 form{
   color: green;
   font-weight: bold;
-  font-size:17px;
+  font-size:17px; 
   
 }
 .align{
   text-align: center;
+}
+#form{
+   padding: 100px;
+   position: absolute;
+   text-align: center;
+   left:400px;
+   top:50px;
+}
+#form input{
+  width:500px
+}
+#form button{
+  width:200px;
 }

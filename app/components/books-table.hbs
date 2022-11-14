@@ -3,13 +3,14 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Author</th>
-      <th scope="col">Total Pages</th>
       <th scope="col">Count</th>
+      <th scope="col">Total Pages</th>
       <th scope="col">     </th>
     </tr>
   </thead>
   <tbody>
     {{#each @book as |b|}}
+       {{#unless b.isDeleted}}
         <tr>
             <td>{{b.name}}</td>
             <td>{{b.author}}</td>
@@ -18,18 +19,19 @@
              <td>
                 <div class="row">
                     <div class="col">
-                        <button type="button" class="btn btn-default btn-sm">
+                        <LinkTo @route="books.edit" @model={{b.bid}}><button id={{b.bid}} type="button" class="btn btn-default btn-sm">
                           <i class='far fa-edit'></i>
-                        </button>
+                        </button></LinkTo>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-default btn-sm">
+                        <button type="button" class="btn btn-default btn-sm" {{on "click" (fn this.delete b)}}>
                            <i class='far fa-trash-alt'></i>
                         </button>
                     </div>
                 </div>
             </td>
         </tr>
+        {{/unless}}
     {{/each}}
   </tbody>
 </table>
